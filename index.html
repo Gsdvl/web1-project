@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aba com Conteúdo no Contêiner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu lateral com abas -->
+        <div class="menu">
+            <div class="menu-item active" onclick="selectTab(event, 'content1')">Aba 1</div>
+            <div class="menu-item" onclick="selectTab(event, 'content2')">Aba 2</div>
+            <div class="menu-item" onclick="selectTab(event, 'content3')">Aba 3</div>
+        </div>
+        
+        <!-- Área principal do contêiner -->
+        <div class="content-container" id="content-container">
+            <!-- Conteúdo dinâmico será exibido aqui -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aba 1 ativa por padrão.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
