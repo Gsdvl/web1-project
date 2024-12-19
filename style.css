@@ -3,27 +3,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0c1d;
+    color: #f1dac4;
+}
+.top-bar {
+    background-color: #161b33;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.project-title{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #a69cac;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #f1dac4;
+    transform: scale(1.1);
+}
+
+.nav-links li a:active {
+    color: #474973;
 }
 
 /* Container principal */
 .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    width: 800px;
-    height: 500px;
-    border: 1px solid #ccc;
+    width: 900px;
+    height: 600px;
+    border: 2px solid #0d0c1d;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    background-color: #777;
+    background-color: #474973;
 }
 
 /* Menu lateral */
@@ -31,7 +67,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 200px;
-    background-color: #444;
+    background-color: #161b33;
     transition: all 0.3s ease;
 }
 
@@ -44,27 +80,31 @@ body {
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    background-color: #444;
-    border-bottom: 1px solid #777;
+    background-color: #161b33;
+    border-bottom: 1px solid #0d0c1d;
     transition: all 0.3s ease;
+    color: #f1dac4;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .menu-item h3 {
     margin-bottom: 10px;
-    color: #333;
+    color: #f1dac4;
 }
 
 /* Conteúdo das abas (escondido por padrão) */
 .menu-content {
     display: none;
     text-align: center;
-    color: #555;
+    color: #f1dac4;
 }
 
 /* Aba ativa - se expande */
 .menu-item.active {
     flex-grow: 1.5; /* Expande a aba ativa para ocupar o espaço */
-    background-color: #777;
+    background-color: #474973;
+    color: #f1dac4;
     border-radius: 0 5px 5px 0;
 }
 
@@ -74,9 +114,98 @@ body {
 .content-container {
     flex: 1; /* Ocupa todo o espaço restante */
     padding: 20px;
-    background-color: #777;
+    background-color: #474973;
     overflow-y: auto;
-    color: #333;
+    color: #f1dac4;
     font-size: 16px;
     line-height: 1.6;
 }
+
+.texto-padrao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    font-weight: 300;
+    line-height: 1.5; 
+    margin: 10px 0; 
+}
+
+.texto-padrao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+    font-weight: 300;
+    line-height: 1.5; 
+    margin: 10px 0; 
+}
+.architecture {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6px; 
+    line-height: 1.5; 
+    margin: 10px 0; 
+}
+
+
+.texto-padrao.titulo {
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+canvas {
+    background-color: #c1aa94;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o label */
+label {
+    font-size: 14px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Estilo para a caixa de seleção como interruptor */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Menor largura */
+    height: 20px; /* Menor altura */
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Menor tamanho da bolinha */
+    width: 16px; /* Menor tamanho da bolinha */
+    border-radius: 50%;
+    left: 2px; /* Ajuste para centralizar a bolinha */
+    bottom: 2px; /* Ajuste para centralizar a bolinha */
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  /* Quando o input está marcado, o interruptor é movido */
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px); /* Move a bolinha */
+  }
+  
